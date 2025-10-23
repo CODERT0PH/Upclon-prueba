@@ -489,7 +489,7 @@ body {
 .profile-header {
     height: 150px;
     background-color: #f0f2f5;
-    background-image: url('Clon5.jpg'); /* Imagen de fondo simulada */
+    background-image: url('/assets-imagen/Clon5.jpg'); /* Imagen de fondo simulada */
     background-size: cover;
     background-position: center;
     display: flex;
