@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!window.location.pathname.includes('login.html')) {
                 // La ruta correcta depende de dónde estás.
                 if (window.location.pathname.includes('assets-html')) {
-                    window.location.href = './login.html';
+                    window.location.href = '../login.html';
                 } else {
-                    window.location.href = './assets-html/login.html';
+                    window.location.href = '../assets-html/login.html';
                 }
             }
             return;
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.removeItem('student');
             alert('Has cerrado sesión.');
             // Redirige a login.html (que está en la misma carpeta que perfil.html)
-            window.location.href = './login.html';
+            window.location.href = '../login.html';
         });
     }
 });
