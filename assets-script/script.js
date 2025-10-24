@@ -5,17 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const savedStudent = JSON.parse(localStorage.getItem('student'));
 
         if (!savedStudent) {
-            // Si la página actual no es login.html, redirige.
-            if (!window.location.pathname.includes('login.html')) {
-                // La ruta correcta depende de dónde estás.
-                if (window.location.pathname.includes('assets-html')) {
-                    window.location.href = '../login.html';
-                } else {
-                    window.location.href = '../assets-html/login.html';
-                }
-            }
-            return;
+        // Si no hay datos guardados, redirigimos a la página de login.
+        // Esta lógica revisa si ya estamos en una subcarpeta para usar la ruta correcta.
+        if (window.location.pathname.includes('assets-html')) {
+            // Si la URL ya contiene 'assets-html', la ruta es directa.
+            window.location.href = './login.html';
+        } else {
+            // Si estamos en la página principal (index.html), debemos incluir la carpeta en la ruta.
+            window.location.href = './assets-html/login.html';
         }
+        return; // Detenemos la ejecución para que no haya errores
+    }
 
         // --- Actualizar datos dinámicamente ---
         
