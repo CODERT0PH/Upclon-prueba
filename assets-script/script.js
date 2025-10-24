@@ -1,42 +1,61 @@
-// Espera a que todo el contenido de la página se cargue antes de ejecutar el script
+// assets-script/script.js
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Funcionalidad para los botones de Horarios (SOLO en index.html) ---
-    const horarioButtons = document.querySelectorAll('.horarios-nav .horario-button');
-    const horarioDetail = document.querySelector('.horario-detail');
+    function loadStudentData() {
+        const savedStudent = JSON.parse(localStorage.getItem('student'));
 
-    if (horarioButtons.length > 0 && horarioDetail) {
-        horarioButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                horarioButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                if (button.textContent.includes('Hoy')) {
-                    horarioDetail.innerHTML = `
-                        <p>15:00</p>
-                        <p>16:59</p>
-                        <h4>Aplicaciones Web</h4>
-                        <p>NRC: 7420 Salón: UH-42</p>
-                    `;
-                } else if (button.textContent.includes('Mañana')) {
-                    horarioDetail.innerHTML = `
-                        <p>09:00</p>
-                        <p>10:45</p>
-                        <h4>Diseño UI/UX</h4>
-                        <p>NRC: 7890 Salón: SH-10</p>
-                    `;
+        if (!savedStudent) {
+            // Si la página actual no es login.html, redirige.
+            if (!window.location.pathname.includes('login.html')) {
+                // La ruta correcta depende de dónde estás.
+                if (window.location.pathname.includes('assets-html')) {
+                    window.location.href = './login.html';
+                } else {
+                    window.location.href = './assets-html/login.html';
                 }
-            });
-        });
+            }
+            return;
+        }
+
+        // --- Actualizar datos dinámicamente ---
+        
+        // Saludo en index.html
+        const welcomeName = document.getElementById('welcome-name');
+        if (welcomeName) welcomeName.textContent = `Hola, ${savedStudent.firstName}...`;
+
+        // Datos en perfil.html
+        const profileName = document.getElementById('profile-name');
+        const profileCareer = document.getElementById('profile-career');
+        const profileCampus = document.getElementById('profile-campus');
+        const profilePic = document.getElementById('profile-pic');
+        
+        if (profileName) profileName.textContent = savedStudent.fullName;
+        if (profileCareer) profileCareer.textContent = savedStudent.career;
+        if (profileCampus) profileCampus.textContent = `📍 ${savedStudent.campus}`;
+        if (profilePic) profilePic.src = savedStudent.profilePicture;
+
+        // Datos en tiu.html
+        const tiuName = document.getElementById('tiu-name');
+        const tiuCareer = document.getElementById('tiu-career');
+        const tiuCampus = document.getElementById('tiu-campus');
+        const tiuAvatar = document.getElementById('tiu-avatar');
+
+        if (tiuName) tiuName.textContent = savedStudent.fullName;
+        if (tiuCareer) tiuCareer.textContent = savedStudent.career;
+        if (tiuCampus) tiuCampus.textContent = `📍 ${savedStudent.campus}`;
+        if (tiuAvatar) tiuAvatar.src = savedStudent.profilePicture;
     }
 
-    // --- Funcionalidad para el botón "Ver más detalle" (SOLO en index.html) ---
-    const verDetalleBtn = document.getElementById('verDetalleBtn');
-    if (verDetalleBtn) {
-        verDetalleBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Aquí se mostrarían más detalles del curso.');
+    loadStudentData();
+    
+    // --- Funcionalidad para el botón "Cerrar Sesión" ---
+    const logoutButton = document.getElementById('logout-button');
+    if (logoutButton) {
+        logoutButton.addEventListener('click', () => {
+            localStorage.removeItem('student');
+            alert('Has cerrado sesión.');
+            // Redirige a login.html (que está en la misma carpeta que perfil.html)
+            window.location.href = './login.html';
         });
     }
-
 });

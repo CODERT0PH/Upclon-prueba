@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurar Perfil - Mi UPC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets-css/style.css">
+
+</head>
+<body>
+    <div class="app-container">
+        <div class="login-container">
+            <h1>Configura tu Perfil</h1>
+            <form id="profile-setup-form">
+                <div class="form-group">
+                    <label for="firstName">Primer Nombre:</label>
+                    <input type="text" id="firstName" placeholder="Ej: PEPITO PEPO" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Apellidos:</label>
+                    <input type="text" id="lastName" placeholder="Ej: QUISPE RAMIREZ" required>
+                </div>
+                <div class="form-group">
+                    <label for="career">Carrera:</label>
+                    <input type="text" id="career" placeholder="Ej: Ingeniería de Software" required>
+                </div>
+                <div class="form-group">
+                    <label for="campus">Campus:</label>
+                    <input type="text" id="campus" placeholder="Ej: Campus Monterrico" required>
+                </div>
+                <div class="form-group">
+                    <label for="profilePhoto">Foto de Perfil:</label>
+                    <input type="file" id="profilePhoto" accept="image/*">
+                    <img id="photoPreview" class="preview-image" src="" alt="Previsualización de Foto" style="display:none;">
+                </div>
+                <p id="error-message" class="error-message">Por favor, completa todos los campos de texto.</p>
+                <button type="submit" class="save-button">Guardar y Continuar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="/assets-script/login-script.js"></script>
+</body>
+</html>
