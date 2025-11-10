@@ -13,6 +13,8 @@ body {
     min-height: 100vh;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     padding-bottom: 80px;
+    position: relative; /* Clave para el layout del TIU */
+    overflow-x: hidden; /* Evita desbordamiento horizontal */
 }
 /* Header de la app */
 .app-header {
@@ -303,6 +305,7 @@ body {
     border-top: 1px solid #e0e0e0;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
     padding: 5px 0;
+    z-index: 100; /* Asegura que la barra de nav esté siempre al frente */
 }
 .nav-item {
     display: flex;
@@ -441,7 +444,7 @@ body {
     border: 4px solid #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     position: absolute;
-    bottom: -5px;
+    bottom: -55px; /* Corregido de -5px a -55px */
 }
 .profile-info {
     text-align: center;
@@ -466,8 +469,8 @@ body {
     margin: 0 0 20px 0;
 }
 .email-card {
-    display: center;
-    justify-content: space-between;
+    display: flex; /* Corregido de 'center' */
+    justify-content: center; /* Corregido */
     text-align: center;
     background-color: #f0f2f5;
     padding: 8px 20px;
@@ -478,6 +481,7 @@ body {
 }
 .email-card .copy-icon {
     cursor: pointer;
+    margin-left: 10px; /* Añadido para espaciar */
 }
 .user-ids {
     text-align: center;
@@ -541,9 +545,8 @@ body {
 }
 
 /* ================================================= */
-/* == INICIO: NUEVOS ESTILOS PARA TIU (REEMPLAZO) == */
+/* == INICIO: ESTILOS LIMPIOS PARA TIU.HTML == */
 /* ================================================= */
-/* FUENTE: 'Roboto' ya está en tu body, 'Bebas Neue' se importa en tiu.html */
 
 .tiu-header {
     display: flex;
@@ -551,17 +554,15 @@ body {
     gap: 15px;
     padding: 15px 15px;
     color: #333;
-    position: relative; /* Agregado para z-index */
-    z-index: 10; /* Agregado */
+    position: relative;
+    z-index: 10;
 }
-
 .back-arrow {
     font-size: 1.5em;
     font-weight: 500;
     color: #d32f2f;
     text-decoration: none;
 }
-
 .tiu-title {
     font-family: 'Bebas Neue', sans-serif;
     color: #110808;
@@ -572,15 +573,6 @@ body {
     line-height: 1.1;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
-
-.tiu-header h1 {
-    /* Este estilo del nuevo CSS parece redundante, usamos tiu-title en su lugar */
-    font-size: 1.1em;
-    font-weight: 500;
-    margin: 0;
-}
-
-/* Pega esto en tu style.css, reemplazando el .tiu-main-content anterior */
 .tiu-main-content {
     display: flex;
     flex-direction: column;
@@ -589,12 +581,8 @@ body {
     padding-top: 25px;
     padding-bottom: 10px;
     position: relative;
-    z-index: 1;
-    /* Nuevo: Aumenta la altura para que haya espacio para la imagen y el fondo */
-    min-height: 400px; /* Ajusta este valor si necesitas más o menos espacio */
-    justify-content: flex-start; /* Empieza los elementos desde arriba */
+    z-index: 2; /* Encima del fondo */
 }
-
 .clock-box {
     background-color: #ddd7f5;
     border-radius: 7px;
@@ -603,24 +591,20 @@ body {
     width: fit-content;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
-
 .digital-clock {
     color: #333;
-    font-family: 'Roboto', sans-serif; /* Aseguramos la fuente */
+    font-family: 'Roboto', sans-serif;
     font-size: 2.1em;
     letter-spacing: -1px;
-    font-weight: 401;
+    font-weight: 400; /* 401 no es un valor estándar */
     margin-bottom: 2px;
-    z-index: 1;
 }
-
 .current-date {
     color: #555;
     font-weight: 500;
     font-size: 1em;
     text-transform: capitalize;
 }
-
 .user-avatar {
     width: 160px;
     height: 160px;
@@ -629,64 +613,45 @@ body {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     margin-top: 44px;
     position: relative;
-    z-index: 4;
-    object-fit: cover; /* Añadido para que la foto no se distorsione */
+    z-index: 4; /* Encima de todo */
+    object-fit: cover;
 }
-
-/* Pega esto en tu style.css, reemplazando el .background-container anterior */
-
-/* Reemplaza también la regla .background-container anterior */
 .background-container {
     position: absolute;
-    bottom: -10; 
+    bottom: -40px; /* Ligeramente por debajo */
     left: 0;
     right: 0;
-    width: 100%;
-    max-width: 450px;
-    height: 480px; 
+    height: 480px;
+    max-width: 450px; /* Coincide con el app-container */
     background-image: url('../assets-imagen/Clonbackground.jpg');
     background-size: cover;
-    background-position: bottom center;
+    background-position: center;
     background-repeat: no-repeat;
-    z-index: 2;
-    margin: auto; 
-
-    /* Nuevo: Mueve el fondo más abajo para que la imagen de perfil sea visible */
-    transform: translateY(120px); /* Ajusta este valor. Puedes probar con 100px, 150px, etc. */
+    z-index: 1; /* Detrás del main-content y la card */
+    margin: auto;
 }
-
-/* Reemplaza también la regla .tiu-card que tenías */
-
 .tiu-card {
-    position: absolute;
-    bottom: 25px; /* Se posiciona a 25px del fondo */
-    left: 25px;  /* A 25px de la izquierda */
-    right: 25px; /* A 25px de la derecha */
-    
-    /* Tus estilos de diseño que ya tenías */
     background-color: #fff;
+    margin: 0 25px;
     padding: 20px 20px 25px 20px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    z-index: 3; /* Se pone delante del fondo */
-
-    /* Ya no necesitamos el margin-top que causaba el problema */
-
-    margin-top: 180px; /* Ajuste para superponer la tarjeta sobre la imagen */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 3; /* Encima del fondo */
+    margin-top: -100px; /* CORRECCIÓN CLAVE: Sube la tarjeta para superponerse */
+    padding-top: 80px; /* Añade padding para que el texto no choque con el avatar */
 }
-
 .student-name {
     font-family: 'Bebas Neue', sans-serif;
     color: #cc0e0e;
     font-size: 2.2em;
-    font-weight: 80; /* Esto es muy bajo, lo cambiaré a 400 */
+    font-weight: 400; /* 80 no es un valor estándar */
     letter-spacing: 2px;
     margin: 0 0 25px 0;
     line-height: 1;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
-
 .detail-group {
     display: block;
     text-align: center;
@@ -696,14 +661,12 @@ body {
     font-size: 1em;
     margin-bottom: 15px;
 }
-
 .label {
     display: block;
     font-weight: 400;
     color: #8d8787;
     text-align: center;
 }
-
 .value {
     display: block;
     font-weight: 700;
@@ -713,27 +676,24 @@ body {
     margin-bottom: 5px;
     font-size: 1.1em;
 }
-
 .location-detail {
     margin-top: 25px;
     padding-top: 2px;
 }
-
-.degree-text, .student-career { /* Combinado con clase existente */
+.degree-text, .student-career {
     font-size: 1.1em;
     font-weight: 700;
     color: #615454;
     margin: 0 0 5px 0;
 }
-
-.campus-text, .student-campus { /* Combinado con clase existente */
+.campus-text, .student-campus {
     font-size: 1em;
     font-weight: 400;
     color: #8d8787;
     margin: 0;
 }
 /* ================================================= */
-/* == FIN: NUEVOS ESTILOS PARA TIU == */
+/* == FIN: ESTILOS TIU == */
 /* ================================================= */
 
 /* ================================================= */
