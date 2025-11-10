@@ -580,6 +580,7 @@ body {
     margin: 0;
 }
 
+/* Pega esto en tu style.css, reemplazando el .tiu-main-content anterior */
 .tiu-main-content {
     display: flex;
     flex-direction: column;
@@ -589,6 +590,9 @@ body {
     padding-bottom: 10px;
     position: relative;
     z-index: 1;
+    /* Nuevo: Aumenta la altura para que haya espacio para la imagen y el fondo */
+    min-height: 400px; /* Ajusta este valor si necesitas más o menos espacio */
+    justify-content: flex-start; /* Empieza los elementos desde arriba */
 }
 
 .clock-box {
@@ -631,20 +635,24 @@ body {
 
 /* Pega esto en tu style.css, reemplazando el .background-container anterior */
 
+/* Reemplaza también la regla .background-container anterior */
 .background-container {
     position: absolute;
-    bottom: 0; /* Lo ancla al fondo */
+    bottom: 0; 
     left: 0;
     right: 0;
-    width: 100%; /* Ocupa todo el ancho */
-    max-width: 450px; /* Coincide con el app-container */
-    height: 480px; /* Altura de la imagen de fondo */
+    width: 100%;
+    max-width: 450px;
+    height: 480px; 
     background-image: url('../assets-imagen/Clonbackground.jpg');
     background-size: cover;
-    background-position: bottom center; /* Muestra la parte de abajo de la imagen */
+    background-position: bottom center;
     background-repeat: no-repeat;
-    z-index: 2; /* Se pone detrás de la tarjeta */
-    margin: auto; /* Se centra horizontalmente */
+    z-index: 2;
+    margin: auto; 
+
+    /* Nuevo: Mueve el fondo más abajo para que la imagen de perfil sea visible */
+    transform: translateY(120px); /* Ajusta este valor. Puedes probar con 100px, 150px, etc. */
 }
 
 /* Reemplaza también la regla .tiu-card que tenías */
