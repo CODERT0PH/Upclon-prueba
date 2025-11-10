@@ -638,7 +638,7 @@ body {
 /* Reemplaza también la regla .background-container anterior */
 .background-container {
     position: absolute;
-    bottom: -80; 
+    bottom: -10; 
     left: 0;
     right: 0;
     width: 100%;
@@ -659,7 +659,6 @@ body {
 
 .tiu-card {
     position: absolute;
-     margin: 0 60px;
     bottom: 25px; /* Se posiciona a 25px del fondo */
     left: 25px;  /* A 25px de la izquierda */
     right: 25px; /* A 25px de la derecha */
@@ -674,7 +673,7 @@ body {
 
     /* Ya no necesitamos el margin-top que causaba el problema */
 
-    margin-top: 140px; /* Ajuste para superponer la tarjeta sobre la imagen */
+    margin-top: 180px; /* Ajuste para superponer la tarjeta sobre la imagen */
 }
 
 .student-name {
