@@ -43,10 +43,10 @@ document.addEventListener('DOMContentLoaded', () => {
             fullName: `${firstName.toUpperCase()} ${lastName.toUpperCase()}`,
             career: career,
             campus: campus,
-            profilePicture: base64Image || '../assets-imagen/Clon10.jpg' // Imagen por defecto
+            profilePicture: base64Image || '/assets-imagen' // Imagen por defecto
         };
 
         localStorage.setItem('student', JSON.stringify(studentData));
-        window.location.href = '/index.html';
+        window.location.href = '../index.html';
     });
 });

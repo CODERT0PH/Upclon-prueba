@@ -709,7 +709,11 @@ body {
 }
 
 .user-avatar {
+<<<<<<< HEAD
     width:150px;
+=======
+    width: 150px;
+>>>>>>> f1ef7a7d067a38e14190fc30886c0d7295c9d19c
     height: 150px;
     border-radius: 50%;
     border: 3px solid #fff;
