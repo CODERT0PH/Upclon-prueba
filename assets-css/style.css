@@ -659,6 +659,7 @@ body {
 
 .tiu-card {
     position: absolute;
+     margin: 0 60px;
     bottom: 25px; /* Se posiciona a 25px del fondo */
     left: 25px;  /* A 25px de la izquierda */
     right: 25px; /* A 25px de la derecha */
