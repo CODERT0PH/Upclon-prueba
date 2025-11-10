@@ -5,6 +5,8 @@ body {
     background-color: #e9e9ef;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* --- CAMBIO: Evita la barra de desplazamiento horizontal en el body --- */
+    overflow-x: hidden; 
 }
 .app-container {
     max-width: 450px;
@@ -13,6 +15,11 @@ body {
     min-height: 100vh;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     padding-bottom: 80px;
+    position: relative;
+    /* --- CAMBIO: Aseguramos que no haya scrollbar horizontal en el contenedor principal --- */
+    overflow-x: hidden; 
+    /* --- CAMBIO: Permitimos el scroll vertical si el contenido lo requiere, pero oculta la barra si no es necesario --- */
+    overflow-y: auto; 
 }
 /* Header de la app */
 .app-header {
@@ -182,7 +189,7 @@ body {
     padding: 0 15px;
 }
 .knowledge-card {
-    background: linear-gradient(135deg, #4a148c 0%, #3b5998 100%); /* Ajuste de color */
+    background: linear-gradient(135deg, #4a148c 0%, #3b5998 100%);
     color: #fff;
     border-radius: 12px;
     padding: 20px;
@@ -243,7 +250,7 @@ body {
 }
 .course-card {
     background-color: #fff;
-    padding: 10px 0 0 0; /* Ajuste de padding */
+    padding: 10px 0 0 0;
     text-align: left;
 }
 .course-card h4 {
@@ -303,6 +310,7 @@ body {
     border-top: 1px solid #e0e0e0;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
     padding: 5px 0;
+    z-index: 100;
 }
 .nav-item {
     display: flex;
@@ -441,7 +449,7 @@ body {
     border: 4px solid #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     position: absolute;
-    bottom: -5px;
+    bottom: -55px;
 }
 .profile-info {
     text-align: center;
@@ -466,8 +474,8 @@ body {
     margin: 0 0 20px 0;
 }
 .email-card {
-    display: center;
-    justify-content: space-between;
+    display: flex;
+    justify-content: center;
     text-align: center;
     background-color: #f0f2f5;
     padding: 8px 20px;
@@ -478,6 +486,7 @@ body {
 }
 .email-card .copy-icon {
     cursor: pointer;
+    margin-left: 10px;
 }
 .user-ids {
     text-align: center;
@@ -541,31 +550,65 @@ body {
 }
 
 /* ================================================= */
-/* == INICIO: NUEVOS ESTILOS PARA TIU (REEMPLAZO) == */
+/* == INICIO: CÓDIGO CORREGIDO PARA TIU.HTML == */
 /* ================================================= */
-/* FUENTE: 'Roboto' ya está en tu body, 'Bebas Neue' se importa en tiu.html */
 
+/* Animación de Nubes (si la quieres, si no, borra de .clouds a .cloud-3) */
+@keyframes moveClouds {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+.clouds {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 200%;
+    height: 100px;
+    animation: moveClouds 40s linear infinite;
+    z-index: 1; 
+}
+.cloud {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background-color: #e6e1f8;
+    border-radius: 50px;
+    opacity: 0.5;
+}
+.cloud::before, .cloud::after {
+    content: '';
+    position: absolute;
+    background-color: #e6e1f8;
+    border-radius: 50%;
+}
+.cloud::before { width: 50px; height: 50px; top: -25px; left: 15px; }
+.cloud::after { width: 60px; height: 60px; top: -30px; right: 10px; }
+.cloud-1 { top: 0; left: 15%; transform: scale(0.8); }
+.cloud-2 { top: 20px; left: 55%; transform: scale(1.2); }
+.cloud-3 { top: 10px; left: 85%; transform: scale(0.6); }
+
+
+/* Header del TIU */
 .tiu-header {
     display: flex;
     align-items: center;
     gap: 15px;
     padding: 15px 15px;
     color: #333;
-    position: relative; /* Agregado para z-index */
-    z-index: 10; /* Agregado */
+    position: relative;
+    z-index: 10;
 }
-
 .back-arrow {
-    font-size: 1.5em;
+    font-size: 1.5em; /* Se mantiene este tamaño ya que es el ícono */
     font-weight: 500;
     color: #d32f2f;
     text-decoration: none;
 }
-
-.tiu-title {
+.tiu-title { 
     font-family: 'Bebas Neue', sans-serif;
     color: #110808;
-    font-size: 2.2em;
+    /* --- CAMBIO: Reducir tamaño de "TIU VIRTUAL" --- */
+    font-size: 1.5em; /* Antes 2.2em, ahora más pequeño */
     font-weight: 700;
     letter-spacing: 1px;
     margin: 0;
@@ -573,13 +616,7 @@ body {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.tiu-header h1 {
-    /* Este estilo del nuevo CSS parece redundante, usamos tiu-title en su lugar */
-    font-size: 1.1em;
-    font-weight: 500;
-    margin: 0;
-}
-
+/* Contenido Principal (Reloj, Fecha, Avatar) */
 .tiu-main-content {
     display: flex;
     flex-direction: column;
@@ -588,9 +625,8 @@ body {
     padding-top: 25px;
     padding-bottom: 10px;
     position: relative;
-    z-index: 1;
+    z-index: 2; /* Encima del fondo */
 }
-
 .clock-box {
     background-color: #ddd7f5;
     border-radius: 7px;
@@ -599,90 +635,90 @@ body {
     width: fit-content;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
-
 .digital-clock {
     color: #333;
-    font-family: 'Roboto', sans-serif; /* Aseguramos la fuente */
+    font-family: 'Roboto', sans-serif;
     font-size: 2.1em;
     letter-spacing: -1px;
-    font-weight: 401;
+    font-weight: 400; 
     margin-bottom: 2px;
-    z-index: 1;
 }
-
 .current-date {
     color: #555;
     font-weight: 500;
     font-size: 1em;
     text-transform: capitalize;
 }
-
 .user-avatar {
     width: 160px;
     height: 160px;
     border-radius: 50%;
     border: 3px solid #fff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    margin-top: 44px;
+    /* --- CAMBIO: Ajustar margin-top si es necesario para separar del reloj/fecha --- */
+    margin-top: 20px; /* Reducido para que la tarjeta pueda bajar más sin empujar el avatar */
     position: relative;
-    z-index: 4;
-    object-fit: cover; /* Añadido para que la foto no se distorsione */
+    z-index: 4; /* Encima de todo */
+    object-fit: cover;
 }
 
+/* Fondo Morado */
 .background-container {
     position: absolute;
-    bottom: -180px;
+    /* --- CAMBIO: Ajusta esto para subir/bajar el fondo. Súbelo un poco para dar más espacio arriba. --- */
+    bottom: 0px; 
     left: 0;
     right: 0;
-    height: 490px;
-    width: 450px;
-    /* CORRECCIÓN: Ruta relativa a la imagen de fondo */
+    height: 480px;
+    max-width: 450px;
     background-image: url('../assets-imagen/Clonbackground.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    z-index: 1; /* Detrás de todo */
+    margin: auto;
 }
 
+/* Tarjeta Blanca del Estudiante */
 .tiu-card {
     background-color: #fff;
-    margin: 0 35px;
-    padding: 22px 20px 50px 20px;
+    margin: 0 25px; /* Margenes laterales */
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     position: relative;
-    z-index: 3; /* La tarjeta estará encima de todo */
-    margin-top: 90px; /* Ajuste para superponer la tarjeta sobre la imagen */
+    z-index: 3; /* Encima del fondo morado */
+    
+    /* --- CAMBIO: Aumenta el margin-top para bajar la tarjeta y no tapar el perfil --- */
+    margin-top: 20px; /* Antes -80px, ahora un valor positivo */
+    /* --- CAMBIO: Ajustar padding-top si es necesario para mantener el contenido centrado --- */
+    padding-top: 30px; /* Antes 90px, ahora reducido ya que la tarjeta está más abajo */
+    padding-bottom: 25px;
 }
-
 .student-name {
     font-family: 'Bebas Neue', sans-serif;
     color: #cc0e0e;
     font-size: 2.2em;
-    font-weight: 80; /* Esto es muy bajo, lo cambiaré a 400 */
+    font-weight: 400; 
     letter-spacing: 2px;
-    margin: 0 0 25px 0;
+    margin: 0 0 25px 0; 
     line-height: 1;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
-
 .detail-group {
     display: block;
     text-align: center;
     width: 80%;
     max-width: 250px;
-    margin: 0 auto;
+    margin: 0 auto 15px auto; 
     font-size: 1em;
-    margin-bottom: 15px;
 }
-
 .label {
     display: block;
     font-weight: 400;
     color: #8d8787;
     text-align: center;
 }
-
 .value {
     display: block;
     font-weight: 700;
@@ -692,27 +728,24 @@ body {
     margin-bottom: 5px;
     font-size: 1.1em;
 }
-
 .location-detail {
     margin-top: 25px;
     padding-top: 2px;
 }
-
-.degree-text, .student-career { /* Combinado con clase existente */
+.degree-text, .student-career {
     font-size: 1.1em;
     font-weight: 700;
     color: #615454;
     margin: 0 0 5px 0;
 }
-
-.campus-text, .student-campus { /* Combinado con clase existente */
+.campus-text, .student-campus {
     font-size: 1em;
     font-weight: 400;
     color: #8d8787;
     margin: 0;
 }
 /* ================================================= */
-/* == FIN: NUEVOS ESTILOS PARA TIU == */
+/* == FIN: ESTILOS TIU == */
 /* ================================================= */
 
 /* ================================================= */
