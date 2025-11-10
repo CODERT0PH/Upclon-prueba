@@ -650,8 +650,8 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     position: relative;
     z-index: 3; /* Encima del fondo */
-    margin-top: -80px; /* CORRECCIÓN CLAVE: Sube la tarjeta para superponerse */
-    padding-top: 100px; /* Añade padding para que el texto no choque con el avatar */
+    margin-top: -60px; /* CORRECCIÓN CLAVE: Sube la tarjeta para superponerse */
+    padding-top: 70px; /* Añade padding para que el texto no choque con el avatar */
     margin-left: 25px;
     margin-right: 25px;
 }
