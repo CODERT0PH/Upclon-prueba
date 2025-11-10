@@ -638,7 +638,7 @@ body {
 /* Reemplaza también la regla .background-container anterior */
 .background-container {
     position: absolute;
-    bottom: -140; 
+    bottom: -80; 
     left: 0;
     right: 0;
     width: 100%;
