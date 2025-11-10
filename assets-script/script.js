@@ -1,21 +1,16 @@
 // assets-script/script.js
 document.addEventListener('DOMContentLoaded', () => {
-
+    
     function loadStudentData() {
         const savedStudent = JSON.parse(localStorage.getItem('student'));
-
         if (!savedStudent) {
-        // Si no hay datos guardados, redirigimos a la página de login.
-        // Esta lógica revisa si ya estamos en una subcarpeta para usar la ruta correcta.
-        if (window.location.pathname.includes('assets-html')) {
-            // Si la URL ya contiene 'assets-html', la ruta es directa.
-            window.location.href = './login.html';
-        } else {
-            // Si estamos en la página principal (index.html), debemos incluir la carpeta en la ruta.
-            window.location.href = './assets-html/login.html';
+            if (window.location.pathname.includes('assets-html')) {
+                window.location.href = './login.html';
+            } else {
+                window.location.href = './assets-html/login.html';
+            }
+            return;
         }
-        return; // Detenemos la ejecución para que no haya errores
-    }
 
         // --- Actualizar datos dinámicamente ---
         
@@ -34,16 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (profileCampus) profileCampus.textContent = `📍 ${savedStudent.campus}`;
         if (profilePic) profilePic.src = savedStudent.profilePicture;
 
-        // Datos en tiu.html
+        // Datos en tiu.html (AHORA INCLUYE EL AVATAR)
         const tiuName = document.getElementById('tiu-name');
         const tiuCareer = document.getElementById('tiu-career');
         const tiuCampus = document.getElementById('tiu-campus');
-        const tiuAvatar = document.getElementById('tiu-avatar');
+        const tiuAvatar = document.getElementById('tiu-avatar'); // Referencia al nuevo avatar
 
         if (tiuName) tiuName.textContent = savedStudent.fullName;
         if (tiuCareer) tiuCareer.textContent = savedStudent.career;
         if (tiuCampus) tiuCampus.textContent = `📍 ${savedStudent.campus}`;
-        if (tiuAvatar) tiuAvatar.src = savedStudent.profilePicture;
+        if (tiuAvatar) tiuAvatar.src = savedStudent.profilePicture; // Asigna la imagen de perfil
     }
 
     loadStudentData();
@@ -54,8 +49,33 @@ document.addEventListener('DOMContentLoaded', () => {
         logoutButton.addEventListener('click', () => {
             localStorage.removeItem('student');
             alert('Has cerrado sesión.');
-            // Redirige a login.html (que está en la misma carpeta que perfil.html)
-            window.location.href = '../login.html';
+            window.location.href = './login.html'; 
         });
     }
+
+    // --- Funcionalidad para los botones de Horarios (SOLO en index.html) ---
+    const horarioButtons = document.querySelectorAll('.horarios-nav .horario-button');
+    if (horarioButtons.length > 0) {
+        // ... (Tu código de horarios, que estaba bien, iría aquí si no estuviera ya en el HTML)
+    }
+
+    // --- Funcionalidad para el botón "Ver más detalle" (SOLO en index.html) ---
+    const verDetalleBtn = document.getElementById('verDetalleBtn');
+    if (verDetalleBtn) {
+        verDetalleBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Aquí se mostrarían más detalles del curso.');
+        });
+    }
+
+    // --- Manejo de la navegación inferior (resaltado de activo) ---
+    const navItems = document.querySelectorAll('.bottom-nav .nav-item');
+    navItems.forEach(item => {
+        // Comprueba si el final del href coincide con el final de la URL
+        if (window.location.href.endsWith(item.getAttribute('href').replace('./', ''))) {
+            navItems.forEach(nav => nav.classList.remove('active'));
+            item.classList.add('active');
+        }
+    });
+
 });

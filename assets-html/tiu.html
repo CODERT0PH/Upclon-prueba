@@ -4,51 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TIU Virtual - Mi UPC</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../assets-css/style.css">
 </head>
 <body>
     <div class="app-container">
-        
-        <div class="clouds">
-            <div class="cloud cloud-1"></div>
-            <div class="cloud cloud-2"></div>
-            <div class="cloud cloud-3"></div>
-        </div>
-
         <header class="tiu-header">
-            <a href="/assets-html/perfil.html" class="back-arrow"><</a>
-            <h1>TIU VIRTUAL</h1>
+            <a href="./perfil.html" class="back-arrow">&#10094;</a>
+            <h1 class="tiu-title">TIU VIRTUAL</h1>
         </header>
 
         <main class="tiu-main-content">
-            <div class="digital-clock" id="digital-clock">--:--:--</div>
+            <div class="clock-box">
+                <div class="digital-clock" id="digital-clock">--:--:--</div>
+            </div>
             <div class="current-date" id="current-date">Cargando fecha...</div>
-
-            <img src="/assets-imagen" alt="Avatar del estudiante" class="user-avatar" id="tiu-avatar">
+            
+            <img src="" alt="Avatar del estudiante" class="user-avatar" id="tiu-avatar">
+            
+            <div class="background-shapes"></div>
         </main>
 
-        <section class="student-card">
-            <h2 class="student-name" id="tiu-name">NOMBRE DEL ESTUDIANTE</h2>
-            
-            <p class="detail-item">
-                <span>Código de alumno:</span>
-                <strong>202345678</strong>
-            </p>
-            <p class="detail-item">
-                <span>ID Banner:</span>
-                <strong>N04064202</strong>
-            </p>
+        <div class="background-container"></div>
 
-            <p class="student-career" id="tiu-career">Carrera del Estudiante</p>
-            <p class="student-campus" id="tiu-campus">📍 Campus Monterrico</p>
+        <section class="tiu-card">
+            <h2 class="student-name" id="tiu-name">CARGANDO NOMBRE...</h2>
+
+            <div class="detail-group">
+                <span class="label">Código de alumno:</span>
+                <span class="value">202345678</span>
+            </div>
+
+            <div class="detail-group">
+                <span class="label">ID Banner:</span>
+                <span class="value">N04064202</span>
+            </div>
+
+            <div class="location-detail">
+                <p class="degree-text" id="tiu-career">Cargando carrera...</p>
+                <p class="campus-text" id="tiu-campus">📍 Cargando campus...</p>
+            </div>
         </section>
+    </div>
 
-    </div> 
     <script src="../assets-script/script.js"></script>
     <script src="../assets-script/tiu.script.js"></script>
 </body>

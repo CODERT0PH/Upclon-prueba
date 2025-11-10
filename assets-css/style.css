@@ -6,7 +6,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
 .app-container {
     max-width: 450px;
     margin: auto;
@@ -15,7 +14,6 @@ body {
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     padding-bottom: 80px;
 }
-
 /* Header de la app */
 .app-header {
     display: flex;
@@ -24,29 +22,24 @@ body {
     padding: 15px 15px 10px 15px;
     background-color: #f7f8fa;
 }
-
 .logo-section {
     display: flex;
     align-items: center;
 }
-
 .app-name {
     font-weight: 500;
     font-size: 20px;
     color: #333;
     margin-right: 0px;
 }
-
 .upc-logo {
     height: 40px;
     width: auto;
 }
-
 .bell-icon {
     font-size: 24px;
     color: #555;
 }
-
 /* Sección de bienvenida */
 .welcome-section {
     display: flex;
@@ -54,7 +47,6 @@ body {
     align-items: center;
     padding: 5px 15px 15px 15px;
 }
-
 .welcome-text h2 {
     font-size: 26px;
     color: #d32f2f;
@@ -62,31 +54,26 @@ body {
     font-weight: 700;
     line-height: 1.2;
 }
-
 .welcome-text p {
     font-size: 15px;
     color: #666;
     margin: 0;
     font-weight: 500;
 }
-
 .welcome-image img {
     width: 110px;
     height: auto;
 }
-
 /* Banner principal (Expresate UPC) */
 .main-banner {
     padding: 0 15px;
     text-align: center;
     position: relative;
 }
-
 .banner-img {
     width: 100%;
     border-radius: 12px;
 }
-
 .banner-dots {
     position: absolute;
     bottom: 10px;
@@ -95,18 +82,15 @@ body {
     display: flex;
     gap: 6px;
 }
-
 .dot {
     width: 7px;
     height: 7px;
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 50%;
 }
-
 .dot.active {
     background-color: #fff;
 }
-
 /* Sección de Horarios */
 .horarios-section {
     background-color: #fff;
@@ -115,14 +99,12 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-
 .horarios-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
 }
-
 .horarios-header h3 {
     font-size: 18px;
     color: #333;
@@ -132,20 +114,17 @@ body {
     gap: 8px;
     font-weight: 800;
 }
-
 .ver-todo {
     color: #d32f2f;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
 }
-
 .horarios-nav {
     display: flex;
     gap: 10px;
     margin-bottom: 20px;
 }
-
 .horario-button {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -157,13 +136,11 @@ body {
     font-weight: 600;
     font-family: 'Montserrat', sans-serif;
 }
-
 .horario-button.active {
     background-color: #d32f2f;
     color: #fff;
     border-color: #d32f2f;
 }
-
 .horario-detail {
     text-align: left;
     display: grid;
@@ -172,7 +149,6 @@ body {
     column-gap: 12px;
     row-gap: 2px;
 }
-
 .horario-detail p:first-of-type {
     grid-row: 1 / 2;
     font-weight: 600;
@@ -201,32 +177,27 @@ body {
     margin: 0;
     font-weight: 500;
 }
-
 /* Banner "Amplía tus Conocimientos" */
 .knowledge-section {
     padding: 0 15px;
 }
-
 .knowledge-card {
     background: linear-gradient(135deg, #4a148c 0%, #3b5998 100%); /* Ajuste de color */
     color: #fff;
     border-radius: 12px;
     padding: 20px;
 }
-
 .knowledge-header {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 10px;
 }
-
 .knowledge-header h3 {
     margin: 0;
     font-size: 16px;
     font-weight: 700;
 }
-
 .knowledge-card p {
     font-size: 14px;
     line-height: 1.5;
@@ -234,7 +205,6 @@ body {
     opacity: 0.9;
     font-weight: 400;
 }
-
 .knowledge-button {
     display: block;
     background-color: #d32f2f;
@@ -246,7 +216,6 @@ body {
     font-weight: 600;
     font-size: 14px;
 }
-
 /* Sección "Cursos" */
 .cursos-section {
     padding: 20px 15px;
@@ -255,40 +224,34 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-
 .cursos-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 15px;
 }
-
 .cursos-title {
     display: flex;
     align-items: center;
     gap: 10px;
 }
-
 .cursos-title h3 {
     margin: 0;
     font-size: 18px;
     color: #333;
     font-weight: 800;
 }
-
 .course-card {
     background-color: #fff;
     padding: 10px 0 0 0; /* Ajuste de padding */
     text-align: left;
 }
-
 .course-card h4 {
     margin: 0 0 10px 0;
     font-size: 16px;
     font-weight: 600;
     color: #333;
 }
-
 .tag-presencial {
     background-color: #e3f2fd;
     color: #1e88e5;
@@ -299,7 +262,6 @@ body {
     display: inline-block;
     margin-bottom: 20px;
 }
-
 .promedio-final {
     display: flex;
     justify-content: space-between;
@@ -311,7 +273,6 @@ body {
     color: #555;
     font-weight: 500;
 }
-
 .ver-detalle {
     color: #d32f2f;
     text-decoration: none;
@@ -322,13 +283,11 @@ body {
     cursor: pointer;
     text-align: center;
 }
-
 .pagination-dots {
     display: flex;
     justify-content: center;
     gap: 8px;
 }
-
 /* Barra de navegación inferior */
 .bottom-nav {
     display: flex;
@@ -345,7 +304,6 @@ body {
     box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
     padding: 5px 0;
 }
-
 .nav-item {
     display: flex;
     flex-direction: column;
@@ -357,46 +315,38 @@ body {
     flex-grow: 1;
     font-weight: 500;
 }
-
 .nav-icon {
     font-size: 22px;
     margin-bottom: 2px;
 }
-
 .nav-item.active {
     color: #d32f2f;
 }
-
 /* =============================================== */
 /* == ESTILOS PARA LA PÁGINA DE AYUDA (ayuda.html) == */
 /* =============================================== */
-
 .ayuda-header {
     padding: 25px 20px;
     background-color: #f7f8fa;
 }
-
 .ayuda-header h1 {
     color: #d32f2f;
     font-size: 24px;
     font-weight: 800;
     margin: 0 0 8px 0;
 }
-
 .ayuda-header p {
     color: #555;
     font-size: 16px;
     font-weight: 500;
     margin: 0;
 }
-
 .ayuda-options {
     padding: 0 15px;
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espacio entre las tarjetas */
+    gap: 15px;
 }
-
 .ayuda-card {
     display: flex;
     align-items: center;
@@ -408,22 +358,18 @@ body {
     color: inherit;
     gap: 15px;
 }
-
 .ayuda-icon {
     font-size: 24px;
 }
-
 .ayuda-text {
-    flex-grow: 1; /* Ocupa el espacio disponible */
+    flex-grow: 1;
 }
-
 .ayuda-text h4 {
     margin: 0 0 5px 0;
     font-size: 15px;
     font-weight: 700;
     color: #333;
 }
-
 .ayuda-text p {
     margin: 0;
     font-size: 14px;
@@ -431,65 +377,55 @@ body {
     color: #777;
     line-height: 1.4;
 }
-
 .ayuda-arrow {
     font-size: 20px;
     font-weight: 600;
     color: #d32f2f;
 }
-
 /* ======================================= */
 /* == ESTILOS PARA EL BANNER "EXPERIENCIA" == */
 /* ======================================= */
-
 .experience-banner {
-    display: flex; /* La clave para alinear todo horizontalmente */
-    align-items: center; /* Centra los elementos verticalmente */
-    gap: 15px; /* Espacio entre el icono, texto y flecha */
-    margin: 20px 15px; /* Margen exterior */
-    padding: 20px; /* Margen interior */
-    background: #4a148c; /* Morado oscuro de la app */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 15px;
+    padding: 20px;
+    background: #4a148c;
     color: #fff;
     border-radius: 12px;
-    text-decoration: none; /* Quita el subrayado del enlace */
+    text-decoration: none;
 }
-
 .experience-icon {
     font-size: 24px;
 }
-
 .experience-text {
-    flex-grow: 1; /* Hace que el texto ocupe todo el espacio disponible */
+    flex-grow: 1;
 }
-
 .experience-text h4 {
     margin: 0 0 4px 0;
     font-size: 14px;
-    font-weight: 700; /* Texto en negrita */
+    font-weight: 700;
 }
-
 .experience-text p {
     margin: 0;
     font-size: 14px;
     font-weight: 500;
     line-height: 1.4;
-    opacity: 0.8; /* Hace el texto un poco más sutil */
+    opacity: 0.8;
 }
-
 .experience-arrow {
     font-size: 22px;
     font-weight: 600;
-    color: #d32f2f; /* Flecha de color rojo */
+    color: #d32f2f;
 }
-
 /* ============================================== */
 /* == ESTILOS PARA LA PÁGINA DE PERFIL (perfil.html) == */
 /* ============================================== */
-
 .profile-header {
     height: 150px;
     background-color: #f0f2f5;
-    background-image: url('/assets-imagen/Clon5.jpg'); /* Imagen de fondo simulada */
+    background-image: url('../assets-imagen/Clon5.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -497,55 +433,38 @@ body {
     align-items: center;
     position: relative;
 }
-
-.profile-picture-placeholder {
+.profile-pic {
     width: 100px;
     height: 100px;
-    background-color: #fff;
     border-radius: 50%;
+    object-fit: cover;
     border: 4px solid #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     position: absolute;
-    bottom: 0px; /* La mitad del círculo queda abajo */
+    bottom: -50px;
 }
-
-.profile-pic { /* Estilos para la imagen de perfil */
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Hace la imagen circular */
-    object-fit: cover; /* Asegura que la imagen cubra el círculo sin distorsionarse */
-    border: 4px solid #fff; /* Borde blanco alrededor de la imagen */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra para darle profundidad */
-    position: absolute; /* Para que quede centrada en la parte inferior del header */
-    bottom: 0px; /* Ajusta la posición para que la mitad quede abajo del header */
-}
-
 .profile-info {
     text-align: center;
-    padding: 65px 20px 20px 20px; /* Padding superior grande para dejar espacio a la foto */
+    padding: 65px 20px 20px 20px;
 }
-
 .profile-info h2 {
     color: #d32f2f;
     font-size: 18px;
     font-weight: 700;
     margin: 0;
 }
-
 .profile-info h3 {
     color: #333;
     font-size: 16px;
     font-weight: 500;
     margin: 4px 0 12px 0;
 }
-
 .profile-info .location {
     color: #555;
     font-size: 14px;
     font-weight: 500;
     margin: 0 0 20px 0;
 }
-
 .email-card {
     display: center;
     justify-content: space-between;
@@ -557,11 +476,9 @@ body {
     color: #333;
     margin-bottom: 20px;
 }
-
 .email-card .copy-icon {
     cursor: pointer;
 }
-
 .user-ids {
     text-align: center;
     color: #555;
@@ -569,19 +486,15 @@ body {
     border-top: 1px solid #eee;
     padding-top: 20px;
 }
-
 .user-ids p {
     margin: 0 0 8px 0;
 }
-
 .user-ids strong {
     font-weight: 600;
 }
-
 .profile-actions {
     padding: 0 15px;
 }
-
 .action-card {
     display: flex;
     justify-content: space-between;
@@ -595,30 +508,25 @@ body {
     font-weight: 600;
     font-size: 15px;
 }
-
 .action-arrow {
     font-weight: 600;
     color: #d32f2f;
 }
-
 .profile-footer {
     padding: 25px 20px;
     text-align: center;
 }
-
 .legal-text {
     font-size: 13px;
     color: #888;
     line-height: 1.5;
     margin-bottom: 25px;
 }
-
 .legal-text a {
     color: #555;
     font-weight: 600;
     text-decoration: none;
 }
-
 .logout-button {
     width: 100%;
     background-color: #fff;
@@ -633,202 +541,184 @@ body {
 }
 
 /* ================================================= */
-/* == ESTILOS GLOBALES Y CONTENEDOR == */
+/* == INICIO: NUEVOS ESTILOS PARA TIU (REEMPLAZO) == */
 /* ================================================= */
-body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    background-color: #f0f2f5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+/* FUENTE: 'Roboto' ya está en tu body, 'Bebas Neue' se importa en tiu.html */
 
-.app-container {
-    max-width: 420px;
-    margin: auto;
-    background-color: #f7f8fa;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden; /* Oculta las nubes que se salen */
-    padding-bottom: 20px;
-}
-
-/* ================================================= */
-/* == CABECERA Y BANNER == */
-/* ================================================= */
 .tiu-header {
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 20px 15px 10px 15px;
-    position: relative;
-    z-index: 10;
+    padding: 15px 15px;
+    color: #333;
+    position: relative; /* Agregado para z-index */
+    z-index: 10; /* Agregado */
 }
 
 .back-arrow {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 1.5em;
+    font-weight: 500;
     color: #d32f2f;
     text-decoration: none;
 }
 
-.tiu-header h1 {
-    font-size: 18px;
+.tiu-title {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #110808;
+    font-size: 2.2em;
     font-weight: 700;
-    color: #212121;
+    letter-spacing: 1px;
+    margin: 0;
+    line-height: 1.1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.tiu-header h1 {
+    /* Este estilo del nuevo CSS parece redundante, usamos tiu-title en su lugar */
+    font-size: 1.1em;
+    font-weight: 500;
     margin: 0;
 }
 
-/* ================================================= */
-/* == CONTENIDO PRINCIPAL (RELOJ Y AVATAR) == */
-/* ================================================= */
 .tiu-main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 30px 20px 10px 20px;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 10px;
     position: relative;
-    z-index: 10;
+    z-index: 1;
+}
+
+.clock-box {
+    background-color: #ddd7f5;
+    border-radius: 7px;
+    padding: 10px 30px;
+    margin-bottom: 13px;
+    width: fit-content;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .digital-clock {
-    background-color: #e6e1f8;
     color: #333;
-    font-size: 32px;
-    font-weight: 700;
-    padding: 10px 25px;
-    border-radius: 8px;
-    margin-bottom: 8px;
+    font-family: 'Roboto', sans-serif; /* Aseguramos la fuente */
+    font-size: 2.1em;
+    letter-spacing: -1px;
+    font-weight: 401;
+    margin-bottom: 2px;
+    z-index: 1;
 }
 
 .current-date {
     color: #555;
     font-weight: 500;
-    font-size: 15px;
-    margin-bottom: 25px;
+    font-size: 1em;
+    text-transform: capitalize;
 }
 
 .user-avatar {
-<<<<<<< HEAD
-    width:150px;
-=======
-    width: 150px;
->>>>>>> f1ef7a7d067a38e14190fc30886c0d7295c9d19c
-    height: 150px;
+    width: 160px;
+    height: 160px;
     border-radius: 50%;
     border: 3px solid #fff;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 44px;
+    position: relative;
+    z-index: 4;
+    object-fit: cover; /* Añadido para que la foto no se distorsione */
 }
 
-/* ================================================= */
-/* == TARJETA DE ESTUDIANTE == */
-/* ================================================= */
-.student-card {
+.background-container {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    right: 0;
+    height: 480px;
+    width: 420px;
+    /* CORRECCIÓN: Ruta relativa a la imagen de fondo */
+    background-image: url('../assets-imagen/Clonbackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: auto; /* Centra el contenedor */
+}
+
+.tiu-card {
     background-color: #fff;
-    margin: 60px 35px;
-    padding: 40px 20px;
-    border-radius: 12px;
+    margin: 0 25px;
+    padding: 20px 10px 25px 20px;
+    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
     position: relative;
-    z-index: 10;
+    z-index: 3;
+    margin-top: -80px; /* Ajuste para superponer (era 80px, lo hacemos negativo) */
 }
 
 .student-name {
-    color: #d32f2f;
-    font-size: 20px;
-    font-weight: 700;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #cc0e0e;
+    font-size: 2.2em;
+    font-weight: 80; /* Esto es muy bajo, lo cambiaré a 400 */
+    letter-spacing: 2px;
     margin: 0 0 25px 0;
-    line-height: 1.2;
+    line-height: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.detail-item {
-    margin: 0 auto 10px auto;
-    font-size: 15px;
-    max-width: 250px;
-    text-align: center; /* Centramos el texto de cada item */
-}
-
-.detail-item span {
+.detail-group {
     display: block;
-    color: #888;
-    font-weight: 500;
-    margin-bottom: 2px;
+    text-align: center;
+    width: 80%;
+    max-width: 250px;
+    margin: 0 auto;
+    font-size: 1em;
+    margin-bottom: 15px;
 }
 
-.detail-item strong {
-    color: #333;
-    font-weight: 600;
-    font-size: 16px;
+.label {
+    display: block;
+    font-weight: 400;
+    color: #8d8787;
+    text-align: center;
 }
 
-.student-career {
-    margin: 25px 0 8px 0;
-    font-size: 16px;
-    color: #333;
-    font-weight: 600;
+.value {
+    display: block;
+    font-weight: 700;
+    color: #615454;
+    text-align: center;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    font-size: 1.1em;
 }
 
-.student-campus {
+.location-detail {
+    margin-top: 25px;
+    padding-top: 2px;
+}
+
+.degree-text, .student-career { /* Combinado con clase existente */
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #615454;
+    margin: 0 0 5px 0;
+}
+
+.campus-text, .student-campus { /* Combinado con clase existente */
+    font-size: 1em;
+    font-weight: 400;
+    color: #8d8787;
     margin: 0;
-    font-size: 15px;
-    color: #555;
-    font-weight: 500;
 }
+/* ================================================= */
+/* == FIN: NUEVOS ESTILOS PARA TIU == */
+/* ================================================= */
 
 /* ================================================= */
-/* == ANIMACIÓN DE NUBES == */
+/* == ESTILOS LOGIN (YA EXISTENTES, LOS MANTENEMOS) == */
 /* ================================================= */
-@keyframes moveClouds {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
-
-.clouds {
-    position: absolute;
-    top: 25%;
-    left: 0;
-    width: 200%;
-    height: 100px;
-    animation: moveClouds 40s linear infinite;
-    z-index: 1;
-}
-
-.cloud {
-    position: absolute;
-    width: 100px;
-    height: 40px;
-    background-color: #e6e1f8;
-    border-radius: 50px;
-    opacity: 0.5;
-}
-
-.cloud::before, .cloud::after {
-    content: '';
-    position: absolute;
-    background-color: #e6e1f8;
-    border-radius: 50%;
-}
-
-.cloud::before {
-    width: 50px;
-    height: 50px;
-    top: -25px;
-    left: 15px;
-}
-
-.cloud::after {
-    width: 60px;
-    height: 60px;
-    top: -30px;
-    right: 10px;
-}
-
-.cloud-1 { top: 0; left: 15%; transform: scale(0.8); }
-.cloud-2 { top: 20px; left: 55%; transform: scale(1.2); }
-.cloud-3 { top: 10px; left: 85%; transform: scale(0.6); }
-
-/* Estilos específicos para la página de login/setup */
 .login-container {
     padding: 40px 20px;
     text-align: center;

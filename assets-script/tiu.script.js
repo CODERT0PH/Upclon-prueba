@@ -1,45 +1,33 @@
-document.addEventListener('DOMContentLoaded', () => {
-
+// assets-script/tiu.script.js
+// Nueva lógica para el reloj
+function updateClock() {
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    
+    // Nos aseguramos de que el elemento exista antes de actualizar
     const clockElement = document.getElementById('digital-clock');
+    if (clockElement) {
+        clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    const days = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+    const months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+    const dayName = days[now.getDay()];
+    const day = now.getDate();
+    const monthName = months[now.getMonth()];
+    const year = now.getFullYear();
+    
+    // Nos aseguramos de que el elemento exista
     const dateElement = document.getElementById('current-date');
-    const timeZone = 'America/Lima'; // Zona horaria de Perú
-
-    // Función para actualizar el reloj (sin cambios)
-    function updateClock() {
-        const now = new Date();
-        const timeOptions = {
-            timeZone: timeZone,
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: false 
-        };
-        clockElement.textContent = now.toLocaleTimeString('es-ES', timeOptions);
+    if (dateElement) {
+        dateElement.textContent = `${dayName}, ${day} ${monthName} ${year}`;
     }
+}
 
-    // --- FUNCIÓN DE FECHA MEJORADA Y A PRUEBA DE ERRORES ---
-    function updateDate() {
-        const now = new Date();
-
-        // 1. Obtenemos cada parte de la fecha por separado
-        const weekday = now.toLocaleDateString('es-ES', { weekday: 'long', timeZone });
-        const day = now.getDate();
-        const month = now.toLocaleDateString('es-ES', { month: 'short', timeZone });
-        const year = now.getFullYear();
-
-        // 2. Formateamos las partes como las necesitamos
-        const capitalizedWeekday = weekday.charAt(0).toUpperCase() + weekday.slice(1);
-        const capitalizedMonth = month.toUpperCase().replace('.', ''); // "oct." -> "OCT"
-
-        // 3. Unimos todo en el formato exacto que quieres
-        const finalDate = `${capitalizedWeekday}, ${day} ${capitalizedMonth} ${year}`;
-        
-        // 4. Asignamos el resultado
-        dateElement.textContent = finalDate;
-    }
-
-    // Ejecución y actualización
-    updateDate();
-    updateClock(); 
-    setInterval(updateClock, 1000); 
+// Inicia el reloj solo cuando el DOM esté cargado
+document.addEventListener('DOMContentLoaded', () => {
+    setInterval(updateClock, 1000);
+    updateClock(); // Llama una vez para evitar el retraso
 });
