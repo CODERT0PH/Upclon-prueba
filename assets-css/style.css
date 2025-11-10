@@ -643,8 +643,8 @@ body {
 }
 .tiu-card {
     background-color: #fff;
-    margin: 0 25px;
-    padding: 20px 20px 25px 20px;
+    margin: 20px 15px; /* Margen normal para que esté DEBAJO del avatar */
+    padding: 25px 20px;
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
