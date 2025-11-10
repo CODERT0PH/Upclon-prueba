@@ -629,30 +629,41 @@ body {
     object-fit: cover; /* Añadido para que la foto no se distorsione */
 }
 
+/* Pega esto en tu style.css, reemplazando el .background-container anterior */
+
 .background-container {
     position: absolute;
-    bottom: -180px;
+    bottom: 0; /* Lo ancla al fondo */
     left: 0;
     right: 0;
-    height: 490px;
-    width: 450px;
-    /* CORRECCIÓN: Ruta relativa a la imagen de fondo */
+    width: 100%; /* Ocupa todo el ancho */
+    max-width: 450px; /* Coincide con el app-container */
+    height: 480px; /* Altura de la imagen de fondo */
     background-image: url('../assets-imagen/Clonbackground.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: bottom center; /* Muestra la parte de abajo de la imagen */
     background-repeat: no-repeat;
+    z-index: 2; /* Se pone detrás de la tarjeta */
+    margin: auto; /* Se centra horizontalmente */
 }
 
+/* Reemplaza también la regla .tiu-card que tenías */
+
 .tiu-card {
+    position: absolute;
+    bottom: 25px; /* Se posiciona a 25px del fondo */
+    left: 25px;  /* A 25px de la izquierda */
+    right: 25px; /* A 25px de la derecha */
+    
+    /* Tus estilos de diseño que ya tenías */
     background-color: #fff;
-    margin: 0 35px;
-    padding: 22px 20px 50px 20px;
+    padding: 20px 20px 25px 20px;
     border-radius: 20px;
     text-align: center;
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 3; /* La tarjeta estará encima de todo */
-    margin-top: 90px; /* Ajuste para superponer la tarjeta sobre la imagen */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    z-index: 3; /* Se pone delante del fondo */
+
+    /* Ya no necesitamos el margin-top que causaba el problema */
 }
 
 .student-name {
