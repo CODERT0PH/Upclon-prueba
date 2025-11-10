@@ -659,8 +659,8 @@ body {
     text-transform: capitalize;
 }
 .user-avatar {
-    width: 140px; /* Hacemos el avatar un poco más pequeño */
-    height: 140px; /* Hacemos el avatar un poco más pequeño */
+    width: 160px; /* Hacemos el avatar un poco más pequeño */
+    height: 160px; /* Hacemos el avatar un poco más pequeño */
     border-radius: 50%;
     border: 3px solid #fff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
