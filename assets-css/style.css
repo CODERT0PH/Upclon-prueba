@@ -673,7 +673,7 @@ body {
 
     /* Ya no necesitamos el margin-top que causaba el problema */
 
-    margin-top: 120px; /* Ajuste para superponer la tarjeta sobre la imagen */
+    margin-top: 140px; /* Ajuste para superponer la tarjeta sobre la imagen */
 }
 
 .student-name {
