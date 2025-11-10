@@ -552,7 +552,8 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 15px 15px;
+    /* Mantenemos lo que ya tienes, pero reducimos el tamaño del h1 */
+    padding: 15px 15px 5px 15px; /* Ajuste un poco el padding superior/inferior */
     color: #333;
     position: relative;
     z-index: 10;
@@ -578,8 +579,11 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding-top: 25px;
+    /* Ajustamos el padding-top para subir los elementos */
+    padding-top: 5px; /* Sube todo el contenido principal (reloj, fecha, avatar) */
     padding-bottom: 10px;
+    /* min-height ya no es tan crítico aquí, pero lo podemos mantener si quieres espacio */
+    min-height: 350px; /* Reducimos un poco la altura mínima si es necesario */;
     position: relative;
     z-index: 2; /* Encima del fondo */
 }
@@ -606,19 +610,19 @@ body {
     text-transform: capitalize;
 }
 .user-avatar {
-    width: 160px;
-    height: 160px;
+    width: 140px; /* Hacemos el avatar un poco más pequeño */
+    height: 140px; /* Hacemos el avatar un poco más pequeño */
     border-radius: 50%;
     border: 3px solid #fff;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    margin-top: 44px;
+    margin-top: 15px;
     position: relative;
     z-index: 4; /* Encima de todo */
     object-fit: cover;
 }
 .background-container {
     position: absolute;
-    bottom: 20px; /* Ligeramente por debajo */
+    bottom: 60px; /* Ligeramente por debajo */
     left: 0;
     right: 0;
     height: 480px;
