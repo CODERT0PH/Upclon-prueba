@@ -672,6 +672,8 @@ body {
     z-index: 3; /* Se pone delante del fondo */
 
     /* Ya no necesitamos el margin-top que causaba el problema */
+
+    margin-top: 120px; /* Ajuste para superponer la tarjeta sobre la imagen */
 }
 
 .student-name {
